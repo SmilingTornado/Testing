@@ -5,31 +5,6 @@
 import webbrowser
 
 
-def ranged_int_input(min, max, message):
-    valid = False
-    while (valid == False):
-        try:
-            parsed_input = int(input('%s\nPlease insert a number between %d and %d\n' % (message, min, max)))
-            if (parsed_input >= min and parsed_input <= max):
-                valid = True
-                return parsed_input
-            else:
-                print('Invalid Input. Please Try again.')
-        except:
-            print('Invalid Input. Please Try again.')
-
-
-def give_letter_options(message, options):
-    valid = False
-    while (valid == False):
-        parsed_input = input('%s\n' % message)
-        if (parsed_input in options):
-            valid = True
-            return parsed_input
-        else:
-            print('Invalid Input. Please Try again.')
-
-
 def a_condition(day, month, year):
     if month <= 2:
         m = month + 10
@@ -70,19 +45,3 @@ def b_condition(day, month, year):
     date_string = '%d-%s-%s' % (year, month, day)
     url = 'https://www.billboard.com/charts/hot-100/' + date_string
     webbrowser.open(url)
-
-
-day = ranged_int_input(1, 31, 'Please input the date')
-month = ranged_int_input(1, 12, 'Please input the month')
-year = ranged_int_input(1900, 2020, 'Please input the year of birth')
-choice = give_letter_options('What would you like to do?\n'
-                             'a) Show day of the week for date\n'
-                             'b) Show the hit songs of the week\n'
-                             'q) Quit', ['a', 'b', 'q'])
-
-if choice == 'a':
-    a_condition(day, month, year)
-elif choice == 'b':
-    b_condition(day, month, year)
-else:
-    print('Goodbye')
