@@ -1,3 +1,6 @@
+import webbrowser
+
+
 def ranged_int_input(min, max, message):
     valid = False
     while (valid == False):
@@ -52,7 +55,17 @@ def a_condition(day, month, year):
 
 
 def b_condition(day, month, year):
-    print()
+    if len(str(month))==1:
+        month = "0" + str(month)
+    else:
+        month = str(month)
+    if len(str(day))==1:
+        day = "0" + str(day)
+    else:
+        day = str(day)
+    date_string = '%d-%s-%s' % (year, month, day)
+    url = 'https://www.billboard.com/charts/hot-100/' + date_string
+    webbrowser.open(url)
 
 
 day = ranged_int_input(1, 31, 'Please input the date')
@@ -66,6 +79,6 @@ choice = give_letter_options('What would you like to do?\n'
 if choice == 'a':
     a_condition(day, month, year)
 elif choice == 'b':
-    b_condition()
+    b_condition(day, month, year)
 else:
     print('Goodbye')
