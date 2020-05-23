@@ -1,6 +1,6 @@
-#author:
-#assignment:
-#description:
+# author:
+# assignment:
+# description:
 
 import webbrowser
 
@@ -59,11 +59,11 @@ def a_condition(day, month, year):
 
 
 def b_condition(day, month, year):
-    if len(str(month))==1:
+    if len(str(month)) == 1:
         month = "0" + str(month)
     else:
         month = str(month)
-    if len(str(day))==1:
+    if len(str(day)) == 1:
         day = "0" + str(day)
     else:
         day = str(day)
