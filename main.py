@@ -15,7 +15,7 @@ def game(difficulty):
     while True:
         nums = []
         inputs = []
-        print('- Level 1 -')
+        print('- Level %d -' % difficulty)
         for i in range(round_length):
             nums.append(randint(10 ** (wmin - 1), (10 ** wmax) - 1))
             print(nums[i])
