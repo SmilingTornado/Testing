@@ -52,7 +52,7 @@ def game(difficulty):
             print('Game Over! Your points: %d' % score)
             option = ip.give_options(
                 'Enter 1 to return to the main menu or 2 to exit: ',
-                ['1', '2', '3'], 'Invalid Option. ')
+                ['1', '2'], 'Invalid Option. ')
             if option == '1':
                 break
             else:
