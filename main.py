@@ -47,7 +47,6 @@ def game(difficulty):
                 break
             else:
                 quit()
-
         else:
             print('Game Over! Your points: %d' % score)
             option = ip.give_options(
